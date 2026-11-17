@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Портфолио — Екатерина Нуршина</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f7;
+    font-family: Arial, sans-serif;
+    color: #17171d;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ВЕРХНИЙ РЯД С ФОТО И ЛОГОТИПОМ */
+
+.top-gallery {
+    display: grid;
+    grid-template-columns: 1fr 95px 1fr;
+    gap: 8px;
+    align-items: center;
+    margin: 35px auto 65px;
+}
+
+.top-photo {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+}
+
+.logo {
+    width: 95px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ИМЯ И КОНТАКТЫ */
+
+.intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.intro h1 {
+    font-size: 27px;
+    margin-bottom: 7px;
+}
+
+.profession {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.income {
+    display: inline-block;
+    background: #c9b6e8;
+    padding: 8px 18px;
+    border-radius: 25px;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px 0 35px;
+    font-size: 13px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.contact-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ОБО МНЕ */
+
+.about {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 35px;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+h2 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.about-photo {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+}
+
+/* ОПЫТ, ОБРАЗОВАНИЕ И НАВЫКИ */
+
+.columns {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr 1.2fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.column {
+    padding-right: 20px;
+    border-right: 2px solid #a58acb;
+}
+
+.column:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.column h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.column p,
+.column li {
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.column ul {
+    padding-left: 18px;
+    margin-top: 10px;
+}
+
+.column p {
+    margin-bottom: 8px;
+}
+
+/* РЯД С ФОТОГРАФИЯМИ И ПРОГРАММАМИ */
+
+.middle-row {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: 18px;
+    align-items: center;
+    border-top: 2px solid #a58acb;
+    padding-top: 20px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.middle-photo {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.programs {
+    text-align: center;
+}
+
+.programs h2 {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.program-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.program-item {
+    text-align: center;
+    font-size: 11px;
+}
+
+.program-icon {
+    width: 45px;
+    height: 45px;
+    background: #17171d;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ */
+
+.extra-info {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 35px;
+    border-top: 2px solid #a58acb;
+    padding-top: 25px;
+    margin-bottom: 40px;
+}
+
+.extra-info h2 {
+    font-size: 19px;
+}
+
+.extra-info p,
+.extra-info li {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.extra-info ul {
+    padding-left: 18px;
+}
+
+/* ПОРТФОЛИО */
+
+.portfolio {
+    background: #17171d;
+    color: white;
+    padding: 30px 20px 0;
+}
+
+.portfolio h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.portfolio h1 + .portfolio-subtitle {
+    margin-top: 30px;
+}
+
+.portfolio-subtitle {
+    text-align: center;
+    color: #dedee3;
+    font-size: 13px;
+    margin: 15px 0;
+}
+
+.gallery + .portfolio-subtitle,
+.wide-gallery + .portfolio-subtitle {
+    margin-top: 30px;
+}
+
+.gallery {
+    max-width: 900px;
+    margin: 0 auto 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.work {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.work:hover img {
+    transform: scale(1.04);
+}
+
+.wide-gallery {
+    max-width: 900px;
+    margin: 18px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.wide-work {
+    width: 100%;
+    overflow: hidden;
+}
+
+.wide-work img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.wide-work:hover img {
+    transform: scale(1.04);
+}
+
+.work-caption {
+    color: #dedee3;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 15px;
+}
+
+.feature {
+    max-width: 900px;
+    aspect-ratio: 5 / 1;
+    margin: 0px auto 0;
+    overflow: hidden;
+}
+
+.feature img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* НИЖНИЙ БЛОК */
+
+footer {
+    background: #17171d;
+    color: #cccccc;
+    border-top: 3px solid #eeeeee;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
+
+@media (max-width: 700px) {
+
+    .top-gallery {
+        grid-template-columns: 1fr 65px 1fr;
+        margin: 20px auto 40px;
+        gap: 5px;
+    }
+
+    .top-photo {
+        height: 65px;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .intro h1 {
+        font-size: 23px;
+    }
+
+    .contacts {
+        gap: 12px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .about-photo {
+        height: 200px;
+    }
+
+    .columns {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .column {
+        border-right: none;
+        border-bottom: 1px solid #a58acb;
+        padding: 0 0 18px;
+    }
+
+    .middle-row {
+        grid-template-columns: 1fr;
+    }
+
+    .middle-photo {
+        height: 180px;
+    }
+
+    .program-list {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .extra-info {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+    }
+
+    .wide-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature {
+        aspect-ratio: 2 / 1;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ФОТОГРАФИИ И ЛОГОТИП -->
+
+<div class="container">
+
+    <div class="top-gallery">
+
+        <img class="top-photo" src="images/header-left.png" alt="Фотография">
+
+        <div class="logo">
+            <img src="images/logo.png" alt="Логотип">
+        </div>
+
+        <img class="top-photo" src="images/header-right.png" alt="Фотография">
+
+    </div>
+
+    <!-- ИНФОРМАЦИЯ О ДИЗАЙНЕРЕ -->
+
+    <section class="intro">
+
+        <h1>Екатерина Нуршина</h1>
+
+        <p class="profession">Графический дизайнер</p>
+
+        <p>Полная занятость · Удалённо</p>
+
+        <div class="income">Желаемый доход: от 40 000 ₽</div>
+
+    </section>
+
+    <!-- КОНТАКТЫ -->
+<div class="contacts">
+
+    <div class="contact-item">
+        <img src="images/telegram.png" alt="Telegram" class="contact-icon">
+        Telegram: @Bel1290
+    </div>
+
+    <div class="contact-item">
+        <img src="images/phone.png" alt="Телефон" class="contact-icon">
+        Телефон: +7 (982) 920-51-32
+    </div>
+
+    <div class="contact-item">
+        <img src="images/email.png" alt="Почта" class="contact-icon">
+        Почта: [hollow_knight@internet.ru](mailto:hollow_knight@internet.ru)
+    </div>
+
+    <div class="contact-item">
+        <img src="images/location.png" alt="Город" class="contact-icon">
+        Город: Тюмень
+    </div>
+
+</div>
+
+    <!-- ОБО МНЕ -->
+
+    <section class="about">
+
+        <div>
+
+            <h2>Обо мне</h2>
+
+            <p>
+                Графический дизайнер с опытом работы в рекламно-производственной сфере.
+                Разрабатываю визуальные решения для брендов, создаю рекламные макеты
+                и готовлю материалы к печати.
+            </p>
+
+            <p>
+                Знакома не только с разработкой дизайна, но и с производственными
+                процессами: работала с режущим плоттером, УФ-печатью, лазерным
+                оборудованием и цифровой печатью. Понимаю особенности различных
+                материалов, способы нанесения изображений и требования к подготовке файлов.
+            </p>
+
+            <p>
+                Умею работать как с отдельными рекламными материалами, так и с
+                элементами фирменного стиля. В работе уделяю внимание композиции,
+                типографике, деталям и техническому качеству макетов.
+            </p>
+
+        </div>
+
+        <img class="about-photo" src="images/about-photo.png" alt="Иллюстрация дизайнера">
+
+    </section>
+
+    <!-- ТРИ КОЛОНКИ -->
+
+    <section class="columns">
+
+        <div class="column">
+
+            <h2>Опыт работы</h2>
+
+            <p>
+                <strong>ООО «Швецъ»</strong><br>
+                11.07.2025 — 01.07.2026<br>
+                Дизайнер
+            </p>
+
+            <ul>
+                <li>Разработка логотипов и элементов фирменного стиля.</li>
+                <li>Создание баннеров, постеров, упаковки и рекламных материалов.</li>
+                <li>Подготовка макетов к печати с учётом технических требований.</li>
+                <li>Адаптация дизайна под различные форматы и рекламные носители.</li>
+                <li>Работа с материалами и оборудованием рекламного производства.</li>
+            </ul>
+
+        </div>
+
+        <div class="column">
+
+            <h2>Образование</h2>
+
+            <p><strong>Специальность:</strong> Реклама</p>
+
+            <p><strong>Квалификация:</strong> Специалист по рекламе</p>
+
+            <p><strong>Период обучения:</strong> 2022–2025</p>
+
+        </div>
+
+        <div class="column">
+
+            <h2>Профессиональные навыки</h2>
+
+            <ul>
+                <li>Разработка айдентики и фирменного стиля.</li>
+                <li>Создание рекламных макетов.</li>
+                <li>Типографика и работа с композицией.</li>
+                <li>Вёрстка и ретушь.</li>
+                <li>Допечатная подготовка.</li>
+                <li>Подготовка файлов по техническим требованиям.</li>
+                <li>Адаптация макетов под разные носители.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- ФОТОГРАФИЯ, ПРОГРАММЫ, ФОТОГРАФИЯ -->
+
+    <section class="middle-row">
+
+        <img class="middle-photo" src="images/skills-left.png" alt="Фотография">
+
+        <div class="programs">
+
+            <h2>Программы</h2>
+
+            <div class="program-list">
+
+                <div class="program-item">
+                    <div class="program-icon">Ps</div>
+                    Adobe<br>Photoshop
+                </div>
+
+                <div class="program-item">
+                    <div class="program-icon">Ai</div>
+                    Adobe<br>Illustrator
+                </div>
+
+                <div class="program-item">
+                    <div class="program-icon">Id</div>
+                    Adobe<br>InDesign
+                </div>
+
+                <div class="program-item">
+                    <div class="program-icon">CD</div>
+                    CorelDRAW
+                </div>
+
+            </div>
+
+        </div>
+
+        <img class="middle-photo" src="images/skills-right.png" alt="Фотография">
+
+    </section>
+
+    <!-- ПРОИЗВОДСТВЕННЫЕ НАВЫКИ И ЛИЧНЫЕ КАЧЕСТВА -->
+
+    <section class="extra-info">
+
+        <div>
+
+            <h2>Производственные навыки</h2>
+
+            <p>
+                <strong>Имею практический опыт работы с оборудованием рекламного производства:</strong>
+            </p>
+
+            <ul>
+                <li>Режущий плоттер Graphtec CE6000-60.</li>
+                <li>УФ-принтер Roland VersaUV LEF-200.</li>
+                <li>Цифровая печатная машина Konica Minolta AccurioPrint C2060L.</li>
+                <li>Лазерное оборудование.</li>
+            </ul>
+
+            <p><strong>Выполняла следующие задачи:</strong></p>
+
+            <ul>
+                <li>Подготовка макетов к производству.</li>
+                <li>Резка термотрансферных материалов на режущем плоттере.</li>
+                <li>Термоперенос изображений на текстиль.</li>
+                <li>Нанесение логотипов на ручки, блокноты, бейджи и таблички.</li>
+                <li>Печать визиток и листовок.</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h2>Личные качества</h2>
+
+            <ul>
+                <li>Внимание к деталям.</li>
+                <li>Художественный вкус.</li>
+                <li>Креативное мышление.</li>
+                <li>Ответственность.</li>
+                <li>Умение работать со сроками.</li>
+                <li>Внимательность при выполнении технических задач.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- ПОРТФОЛИО -->
+
+<section class="portfolio">
+
+    <h1>Портфолио</h1>
+
+    <p class="portfolio-subtitle">Дрим Принт | Типография</p>
+
+    <!-- Первый ряд: три квадратных изображения -->
+
+    <div class="gallery">
+
+        <div>
+            <div class="work"><img src="images/work-01.png" alt="Работа 1"></div>
+            <p class="work-caption">Визитка</p>
+        </div>
+
+        <div>
+            <div class="work"><img src="images/work-02.png" alt="Работа 2"></div>
+            <p class="work-caption">Патерн в стиле Дрим Принт</p>
+        </div>
+
+        <div>
+            <div class="work"><img src="images/work-03.png" alt="Работа 3"></div>
+            <p class="work-caption">Листовка и логотип</p>
+        </div>
+
+    </div>
+
+    <!-- Второй ряд: два прямоугольных изображения -->
+
+    <div class="wide-gallery">
+
+        <div>
+            <div class="wide-work"><img src="images/work-04.png" alt="Работа 4"></div>
+            <p class="work-caption">Буклет внутренняя часть</p>
+        </div>
+
+        <div>
+            <div class="wide-work"><img src="images/work-05.png" alt="Работа 5"></div>
+            <p class="work-caption">Буклет наружняя часть</p>
+        </div>
+
+    </div>
+
+    <p class="portfolio-subtitle">Швецъ | Швейная фабрика</p>
+
+    <!-- Третий ряд -->
+
+    <div class="gallery">
+
+        <div>
+            <div class="work"><img src="images/work-06.png" alt="Работа 6"></div>
+            <p class="work-caption">Баннер и конкурс студентов</p>
+        </div>
+
+        <div>
+            <div class="work"><img src="images/work-07.png" alt="Работа 7"></div>
+            <p class="work-caption">Открытка</p>
+        </div>
+
+        <div>
+            <div class="work"><img src="images/work-08.png" alt="Работа 8"></div>
+            <p class="work-caption">Календарь</p>
+        </div>
+
+    </div>
+
+    <!-- Четвёртый ряд -->
+
+    <div class="gallery">
+
+        <div>
+            <div class="work"><img src="images/work-09.png" alt="Работа 9"></div>
+            <p class="work-caption">Начало презентации</p>
+        </div>
+
+        <div>
+            <div class="work"><img src="images/work-10.png" alt="Работа 10"></div>
+            <p class="work-caption">Конец прзентации</p>
+        </div>
+
+        <div>
+            <div class="work"><img src="images/work-11.png" alt="Работа 11"></div>
+            <p class="work-caption">Технический рисунок одежды</p>
+        </div>
+
+    </div>
+
+    <p class="portfolio-subtitle">Scoops Ahoy</p>
+
+    <!-- Пятый ряд -->
+
+    <div class="gallery">
+
+        <div>
+            <div class="work"><img src="images/work-12.png" alt="Работа 12"></div>
+            <p class="work-caption">Подтверждение операции</p>
+        </div>
+
+        <div>
+            <div class="work"><img src="images/work-13.png" alt="Работа 13"></div>
+            <p class="work-caption">Скидки на сайте Scoops Ahoy</p>
+        </div>
+
+        <div>
+            <div class="work"><img src="images/work-14.png" alt="Работа 14"></div>
+            <p class="work-caption">Промокоды на сайте Scoops Ahoy </p>
+        </div>
+
+    </div>
+
+    <!-- Нижнее широкое изображение -->
+
+    <div class="feature">
+        <img src="images/feature.png" alt="Дополнительная работа">
+    </div>
+
+</section>
+
+<footer>
+
+    Екатерина Нуршина · Графический дизайнер
+
+    <br><br>
+
+    Telegram: @Bel1290
+
+    <span style="display: inline-block; margin-left: 15px;">
+        Телефон: +7 (982) 920-51-32
+
+        <span style="display: inline-block; margin-left: 15px;">
+             Почта: hollow_knight@internet.ru
+        </span>
+    </span>
+
+</footer>
+
+</body>
+</html>
